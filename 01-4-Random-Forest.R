@@ -62,7 +62,7 @@ treesize(rf_vehicle)[20]
 
 ####
 # FRAGE: Wieviele Endpunkte hat sie?
-# ANTWORT: 131 Endpunkte
+# ANTWORT: 131 Endpunkte (Durch randomForest verändert sich die Anzahl der Endpunkte)
 ####
 
 plot(tree_vehicle)
@@ -70,10 +70,11 @@ plot(tree_vehicle)
 
 ####
 # FRAGE: Zeichnen Sie den Baum, bis der erste Endpunkt erscheint — was für einen Endpunkt erhalten Sie?
-# ANTWORT: 7
+# ANTWORT: 7 (Durch randomForest verändert sich der Endpunkt)
 ####
 
 hist(treesize(rf_vehicle))
+plot(treesize(rf_vehicle), type="h")
 
 ####
 # FRAGE: Machen Sie dazu ein Histogramm. Wie beurteilen Sie dies?

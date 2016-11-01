@@ -177,7 +177,18 @@ CrossTable(credit.test$Class, credit.cost_predict,
 prunetree <- tree1
 printcp(prunetree)
 plotcp(prunetree)
-prunetree2 <- prune.rpart(prunetree, cp=0.0083333)
+prunetree2 <- prune.rpart(prunetree, cp=0.0366667)
 printcp(prunetree2)
 plotcp(prunetree2)
 
+# Testing a fancy tree plotting
+library(rattle)
+library(rpart.plot)
+library(RColorBrewer)
+
+install.packages('RGtk2')
+install.packages('rattle')
+install.packages('rpart.plot')
+install.packages('RColorBrewer')
+
+fancyRpartPlot(prunetree2)
