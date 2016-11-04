@@ -1,3 +1,8 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
 # Lab: k-NN
 
 # Libraries -------------------------------------------------------------------- 
@@ -8,11 +13,7 @@
 # http://cran.r-project.org/web/packages/caret/vignettes/caret.pdf
 # Also check the caret.r in the tutorial repo
 library(caret)
-library(randomForest)
-library(e1071)
 install.packages('caret')
-install.packages('randomForest')
-install.packages('e1071')
 
 # Functions --------------------------------------------------------------------
 normalize <- function(x) {
@@ -28,6 +29,7 @@ str(veh)
 
 # Spliting data as training and test set. 
 # Using createDataPartition() function from caret
+```{r}
 set.seed(1711)
 inTraining <- createDataPartition(veh$Class, p = .75, list = FALSE)
 df_train <- veh[inTraining,]
@@ -37,20 +39,18 @@ table(df_test$Class)
 
 round(prop.table(table(df_train$Class)),2)
 round(prop.table(table(df_test$Class)),2)
-
+```
 # Preprocessing  ---------------------------------------------------------------
 # Why is it important to normalize numeric data for k-NN?
-# Your answer ...Das der Wertebereich sich zwischen 0 und 1 befindet, um zwei
-# Skaalen eine Anpassung zu treffen.
+# Your answer ...
 
 
 # Models -----------------------------------------------------------------------
 set.seed(1711)
-ctrl <- trainControl(method = "repeatedcv", repeats = 1) 
+ctrl <- trainControl(method = "repeatedcv", repeats = 10) 
 
-# Train a model without normalization
-?train
-knn <- train(Class ~ ., data = df_train, method = "rf", trControl = ctrl, tuneLength = 5)
+# Train a model without normalization 
+knn <- train(Class ~ ., data = ..., method = ..., trControl = ctrl, tuneLength = 20)
 knn
 plot(knn)
 
@@ -65,11 +65,10 @@ df_test_n <- as.data.frame(lapply(df_test[1:18], normalize))
 df_train_n$Class <- veh[inTraining, 19]
 df_test_n$Class <- veh[-inTraining, 19]
 
-knn.n <- train(Class ~ ., data = df_train_n, method = "rf", trControl = ctrl, tuneLength = 5)
+knn.n <- train(...)
 
 # Output of kNN.n
-knn.n
-plot(knn.n)
+...
 
 # Train a model with standardization (z-Transformation)
 # We use the scale function
@@ -78,24 +77,19 @@ df_test_z <- as.data.frame(scale(df_test[-19]))
 df_train_z$Class <- veh[inTraining, 19]
 df_test_z$Class <- veh[-inTraining, 19]
 
-knn.z1 <- train(Class ~ ., data = df_train_z, method = "rf", trControl = ctrl, tuneLength = 5)
+knn.z1 <- train...
 
 # Output of kNN.z1
-knn.z1
-plot(knn.z1)
+...
 
 # Train has also a parameter preprocess. 
 # What does this mean?
-# Your Answer: Vorbereitung der Daten
+# Your Answer: 
 # ...
 # How could you use preprocess for z-transformation
-# Your Answer: Kann verwendet werden, um die Eingabewerte zu standardisieren, damit die Varianz zw. 0 und 1 liegt.
+# Your Answer:
 # ...
-
-# Wenn man den preProcess vorher machen möchte
-#def_train_z2 <- preProcess(df_train, method = c("scale"))
-
-knn.z2 <- train(Class ~ ., data = df_train_z, method = "rf", preProcess = "scale", trControl = ctrl, tuneLength = 5)
+knn.z2 <- ...
 
 # Plotting yields Number of Neighbours Vs accuracy (based on repeated cross validation)
 ...
