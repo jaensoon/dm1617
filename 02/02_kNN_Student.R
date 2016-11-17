@@ -98,7 +98,8 @@ plot(knn.z1)
 knn.z2 <- train(Class ~ ., data = df_train_z, method = "rf", preProcess = "scale", trControl = ctrl, tuneLength = 5)
 
 # Plotting yields Number of Neighbours Vs accuracy (based on repeated cross validation)
-...
+knn.z2
+plot(knn.z2)
 
 # Compare the Models -----------------------------------------------------------
 
@@ -119,4 +120,8 @@ knn_Predict_z2 <- predict(knn.z2, newdata = df_test)
 confusionMatrix(knn_Predict_z2, df_test$Class )
 
 # Compare the best k-NN Model with your Random Forest solution of Assignment 1-----------------
-...
+rf_vehicle <- randomForest(formula=Class~., data=veh, ntree=500, mtry=4, do.trace=100)
+print(rf_vehicle)
+rf_vehicle$confusion
+
+# RandomForest ist für diese Auswertung besser geeignet
