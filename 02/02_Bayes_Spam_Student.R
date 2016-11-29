@@ -21,7 +21,7 @@ str(sms_raw)
 # convert spam/ham to factor.
 sms_raw$type <- factor(sms_raw$type)
 
-# examine the type variable more carefully
+# examine the type variable more carefullyls
 str(sms_raw$type)
 table(sms_raw$type)
 
