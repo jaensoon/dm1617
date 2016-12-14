@@ -1,0 +1,161 @@
+[Datum: 02.04.2002]
+			Data-Mining-Cup 2002
+                          Aufgabenstellung
+			====================
+
+Ausgangssituation
+-----------------
+
+Der deutsche Markt der Energieversorger ist seit 1999 dereguliert.
+Das heißt, dass seit diesem Zeitpunkt die Stromkunden in Deutschland
+frei ihren Anbieter wechseln können -- vorher war dies nicht möglich.
+
+Das ist eine neue Situation für Anbieter und Kunden. Der Kunde wird
+oft einen Wechsel vollziehen, um durch günstigere Preise an den
+Stromkosten zu sparen.
+
+Die Anbieter ihrerseits stehen vor der neuen Herausforderung, ihre
+Kunden mit guten und interessanten Angeboten binden zu müssen.
+Sie versuchen dabei, ihre Kunden individuell und bedürfnisgerecht
+anzusprechen. Vor diesem Hintergrund wird Data Mining u. a. zur
+Berechnung von Kundenprofilen eingesetzt.
+
+
+Scenario
+--------
+
+Ein Energieversorger möchte mit zielgerichteten Kundenbindungs-
+maßnahmen seine Kunden halten. Dazu möchte er potenziellen Kündigern
+einen günstigeren Tarif (Tarif "Rabatt") anbieten. Da dieser Tarif
+für den Energieversorger einen geringeren Gewinn bedeutet, will er
+die vorraussichtlich treuen Kunden von diesem Angebot nicht infor-
+mieren, um nicht zu vielen von diesen Kunden den Tarif "Rabatt"
+gewähren zu müssen.
+
+Ziel des Einsatzes von Data Mining ist es hierbei, die potenziellen
+Kündiger von den treuen Kunden zu unterscheiden. Potenziellen Kün-
+digern wird dann der Tarif "Rabatt" angeboten, um sie damit zu binden.
+Insgesamt ist es für den Energieversorger deutlich günstiger, einen
+potenziellen Kündiger weiterhin im Tarif "Rabatt" zu versorgen als
+ihn ganz zu verlieren.
+
+Es wird geschätzt, dass in den nächsten zwei Jahren ca. 10 % der
+Kunden des Energieversorgers kündigen würden, falls keine Kunden-
+bindungsmaßnahmen durchgeführt werden. Als Trainingsmenge für das
+Erlernen des Kündigerprofils ist deshalb eine geschichtete Stich-
+probe von 9000 Kunden und 1000 Kündigern des letzten Jahres ge-
+zogen worden.
+
+Die folgende Kundenwertmatrix (Kundenwert je Jahr) bildet die
+Grundlage für die Optimierung der Kundenbindungsmaßnahme:
+
+                              | Kündiger   | Kunde
+   ---------------------------|------------|------------
+   Kunde erhält Angebot       |  43,80 EUR |  66,30 EUR
+   ---------------------------|------------|------------
+   Kunde erhält keine Angebot |   0,00 EUR |  72,00 EUR
+
+Der Wert der Kunden ergibt sich dabei aus dem durchschnittlichen
+Deckungsbeitrag und unter Berücksichtigung des Umsatzpotenzials,
+dass der Kunde für den Energieversorger besitzt.
+
+Das Kündigerprofil soll auf ca. 1 Million Kunden des Energieversorgers
+angewendet werden, um die Kunden auszuwählen, welche den Tarif "Rabatt"
+angeboten bekommen. Dabei ist der erzielte Kundenwert zu maximieren.
+
+Im Rahmen des Data Mining Cups ist das Kündigerprofil exemplarisch
+auf 10000 Kunden anzuwenden.
+
+
+Aufgabe
+-------
+
+Folgende Data-Mining-Aufgabe ist zu bearbeiten:
+Anhand der Trainingsmenge (data_dmc2002_train.txt) ist ein Kündiger-
+profil zu generieren, das auf die exemplarisch ausgewählten 10000
+zu klassifizierenden Kunden (data_dmc2002_class.txt) anzuwenden ist.
+
+Für die Optimierung der Kundenbindungsmaßnahme ist die oben im
+Scenario angegebene Kundenwertmatrix zu benutzen.
+
+Als Ergebnis ist eine Liste mit IDs der anzuschreibenden Kunden
+zu liefern. Die Liste ist als Textdatei zuzusenden. Der Name der
+Datei ist aus dem eigenen Namen wie folgt zu bilden:
+
+   Vorname_Name.txt
+
+Nur so ist es möglich, die eingesandten Lösungen richtig zuzuordnen.
+
+In der Datei sind nur die IDs der anzuschreibenden Kunden anzugeben,
+und zwar jede ID auf einer Zeile:
+
+   1578
+   302
+   5892
+   ...
+
+Die Datei ist bis zum 06.05.2002 per E-Mail an dmc-result@prudsys.de
+zu senden.
+
+
+Daten
+-----
+
+Zwei Textdateien werden zur Verfügung gestellt:
+
+   data_dmc2002_train.txt
+      Trainingsmenge, 10.000 Datensätze, das 
+      Zielmerkmal (Kündiger) heißt "canceler".
+
+   data_dmc2002_class.txt
+      10.000 Kunden, die zu klassifizieren 
+      sind, enthält bis auf "canceler" die gleichen Merkmale wie 
+      data_dmc2002_train.txt.
+
+Die einzelnen Spalten sind durch Tabulator voneinander getrennt.
+Sofern keine Werte angegeben sind, sind die Werte nicht bekannt,
+sie sind also in diesen Fällen als fehlende Werte zu behandeln.
+
+
+Bewertung der Ergebnisse
+------------------------
+
+Der Jury ist bekannt, wer von den 10.000 zu klassifizierenden Kunden
+wirklich gekündigt hat. Das ermöglichte es, eine faire und bewertbare
+Data-Mining-Aufgabe zu stellen.
+
+Die eingesandten Ergebnisse werden mit den bekannten Informationen
+über das Kündigungsverhalten verglichen und der vom Teilnehmer real
+erzielte Gewinn (Summe der Kundenwerte) berechnet. Sieger ist der
+Teilnehmer, der den größten Gewinn für den Energieversorger erzielt.
+
+
+Beschreibung der Merkmale
+-------------------------
+
+Die ausführliche Beschreibung der Merkmale erfolgt in der Datei
+"de_Merkmale_DMC2002.txt".
+
+
+Dank
+----
+
+Die mikrogeografischen Informationen wurden uns freundlicherweise von
+der Firma Consodata Marketing Intelligence GmbH (http://www.consodata.de)
+zur Verfügung gestellt. Für die unkomplizierte Zusammenarbeit möchten
+wir uns speziell bei Dr. Kremser bedanken.
+
+
+Kontakt
+-------
+
+Prudential Systems Software GmbH
+Sandra Hömke
+Bergstraße 61
+09113 Chemnitz
+
+Tel.: +49 3 71 2 70 93-32
+Fax:  +49 3 71 2 70 93-90 
+
+E-Mail: dmc-result@prudsys.de
+WWW:    http://www.data-mining-cup.de

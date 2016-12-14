@@ -1,0 +1,117 @@
+[Datum: 02.04.2002]
+                         Data-Mining-Cup 2002
+                       Beschreibung der Merkmale
+                       =========================
+
+Die Daten des Data-Mining-Cups 2002 sind anonymisierte Kundendaten
+eines Energieversorgers. Neben der "ID" sind "payment_type" und
+"power_consumption" vom Versorger gespeicherte Kundenmerkmale.
+Das Merkmal "canceler" ist das Zielmerkmal und ist nur in der
+Trainingsdatei vorhanden.
+
+Die übrigen Merkmale sind Informationen der mikrogeografischen
+Datenbank MIKROTYP der Firma Consodata und dienen der Beschreibung
+der Kunden. Eine ausführliche Beschreibung dieser Merkmale ist in
+der Datei "de_Beschreibung_Mikrogeographie_Consodata.pdf" enthalten.
+
+
+Merkmal            Typ             Beschreibung
+---------------------------------------------------------------------
+ID                 Integer         ID-Merkmal, Datenbank-
+                                   Schlüsselfeld
+
+payment_type       Text            Art der Bezahlung:
+
+                                   1 Überweisung durch den Kunden
+                                   2 Abbuchung vom Kundenkonto
+                                   3 andere Regelung
+
+power_consumption  Integer         letzter jährlicher Stromverbrauch 
+                                   in kWh
+
+HHH                Integer         Anzahl Haushalte im Haus
+
+HGEW               Integer         Anzahl Gewerbe im Haus
+
+MTREG0G            Integer         Regionaltyp*                                   
+
+MTKAU0G            Integer         Kaufkraft*
+                                   
+MTSTR0G            Integer         Straßentyp*
+                                  
+MTBEB0G            Integer         Bebauungstyp*                                   
+
+MTSTA0G            Integer         Status*
+                                   
+MTBON0G            Integer         Prüfungsgrad Bonität*
+
+MTADE0G            Integer         Anteil Deutscher*
+
+MTALT0G            Integer         Altersstruktur*
+
+MTFAM0G            Integer         Familienstand*
+
+MTKDI0G            Integer         PKW-Indizes: 
+                                   PKW-Dichte*
+                                   
+MTKLE0G            Integer         PKW-Indizes: 
+                                   PKW-Leistungsindex*
+
+MTKKL0G            Integer         PKW-Indizes: 
+                                   PKW-Kleinbusindex*
+
+MTKGB0G            Integer         PKW-Indizes: 
+                                   PKW-Gebrauchtwagenindex*
+
+MTKGL0G            Integer         PKW-Indizes: 
+                                   PKW-Geländewagenindex*
+
+SCMWGR2            Integer         Psychonomics-Versicherungstyp: 
+                                   Treuer Vertreterkunde*
+
+SCMWGR3            Integer         Psychonomics-Versicherungstyp: 
+                                   Anspruchsvoller Delegierer*
+
+SCMWGR4            Integer         Psychonomics-Versicherungstyp: 
+                                   Preisorientierter Rationalist*
+
+SCMWGR5            Integer         Psychonomics-Versicherungstyp: 
+                                   Überforderter Unterstützung-
+                                   suchender*
+
+SCMWGR6            Integer         Psychonomics-Versicherungstyp: 
+                                   Skeptisch-Gleichgültiger*
+
+SCMWGR7            Integer         Psychonomics-Versicherungstyp: 
+                                   Distinguiert-Konservativer*
+
+SCMWGR21           Integer         Psychonomics-Versicherungstyp: 
+                                   Affinität zu Direktwerbung* 
+
+SCMWGR22           Integer         Psychonomics-Versicherungstyp: 
+                                   Affinität zum Direktvertrieb*
+
+PHARM1             Integer         Pharmatypologie: 
+                                   Gesunder Kraftprotz*
+
+PHARM2             Integer         Pharmatypologie: 
+                                   Unkritischer Wehleidiger*
+
+PHARM3             Integer         Pharmatypologie: 
+                                   Skeptischer Verweigerer*
+
+PHARM4             Integer         Pharmatypologie: 
+                                   Informierter Körperbewusster*
+
+PHARM5             Integer         Pharmatypologie: 
+                                   Eingeschränkter Kassenpatient*
+
+PHARM6             Integer         Pharmatypologie: 
+                                   Konservativer Arztgläubiger*
+
+canceler           yes/no          Zielmerkmal:
+                                   yes Kündiger
+                                   no  Kunde
+
+
+* (siehe MIKROTYP-Beschreibung in de_Beschreibung_Mikrogeographie_Consodata.pdf)
